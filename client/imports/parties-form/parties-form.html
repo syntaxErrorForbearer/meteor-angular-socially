@@ -1,0 +1,13 @@
+<!-- **special form directives: ngFormModel and ngConrol
+bind the properties to the DOM elements as part of the @angular/common package. No need to import into the component itself
+ **In angular 2, events are indicated by the round bracket() snytax. Here we are telling angular to call a mehtod addParty on submit and pass in the value of the form, f. The addParty method will be added to our PartiesForm class/-->
+<form [ngFormModel]="partiesForm" #f="ngForm" (submit)="addParty(f.value)">
+	<label>Name</label>
+	<input type="text" ngControl="name">
+	<label>Description</label>
+	<input type="text" ngControl="description">
+	<label>Location</label>
+	<input type="text" ngControl="location">
+	<button>Add</button>
+	{{f.value}}
+</form>
